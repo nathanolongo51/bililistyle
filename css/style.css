@@ -2,15 +2,17 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 
 :root{
-  --bg: #f8f5f2;
-  --bg-alt: #f0ebe6;
-  --card: #ffffff;
-  --text: #3c2a21;
-  --text-dim: #7a6355;
+  --bg: #f5f0eb;
+  --bg-alt: #ebe4dc;
+  --card: #faf6f2;
+  --text: #2e1f18;
+  --text-dim: #5c463a;
   --accent: #8b5e3c;
   --accent-hover: #6d4a2f;
-  --line: rgba(60,42,33,.2);
+  --line: rgba(46,31,24,.22);
   --radius: 3px;
+  --shadow: 0 6px 20px rgba(46,31,24,.08);
+  --shadow-lg: 0 12px 32px rgba(46,31,24,.12);
 }
 
 html{
@@ -115,7 +117,7 @@ ul{ list-style:none; }
   position: sticky;
   top:0;
   z-index: 100;
-  background: rgba(248,245,242,.94);
+  background: rgba(245,240,235,.94);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
@@ -272,9 +274,9 @@ ul{ list-style:none; }
 
 .polaroid{
   position:absolute;
-  background:#fff;
+  background: var(--card);
   padding: clamp(5px, 0.9vw, 8px) clamp(5px, 0.9vw, 8px) clamp(14px, 2vw, 22px);
-  box-shadow: 0 12px 28px rgba(60,42,33,.18);
+  box-shadow: var(--shadow-lg);
 }
 .polaroid img{
   width: clamp(80px, 12vw, 140px);
@@ -484,6 +486,10 @@ ul{ list-style:none; }
   text-align:center;
   border-left: 1px solid var(--line);
   min-width: 0;
+  transition: box-shadow .25s ease;
+}
+.price-card:hover{
+  box-shadow: var(--shadow);
 }
 .price-card:first-child{ border-left:none; padding-left:0; }
 .price-card:last-child{ padding-right:0; }
@@ -553,7 +559,7 @@ ul{ list-style:none; }
   padding: clamp(18px, 2.5vw, 28px) clamp(14px, 2vw, 24px);
   border-radius: var(--radius);
   border: 1px solid var(--line);
-  box-shadow: 0 4px 16px rgba(60,42,33,.04);
+  box-shadow: var(--shadow);
   min-width: 0;
 }
 .testi-card p{
@@ -650,34 +656,69 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* ================= MOBILE MENU + RESPONSIVE ADJUSTMENTS ================= */
 @media (max-width: 900px){
-  .burger{ display:flex; }
+  
+  .site-header {
+    backdrop-filter: none;
+    background: var(--bg);
+  }
 
-  .main-nav{
-    position: fixed;
+  .burger {
+    display: flex !important;
+    order: 2;
+    position: relative;
+    z-index: 10000 !important;
+  }
+
+  /* Quand le menu est ouvert → le burger devient fixe */
+  .burger.is-open {
+    position: fixed !important;
+    top: 18px;
+    right: 18px;
+    z-index: 10000 !important;
+  }
+
+  .main-nav {
+    position: fixed !important;
     top: 0;
     right: 0;
-    width: min(280px, 85vw);
-    height: 100vh;
+    bottom: 0;
+    width: min(300px, 85vw);
+    height: auto !important;
+    min-height: 100dvh;
     background: var(--bg);
-    flex-direction: column;
+    flex-direction: column !important;
     align-items: flex-start;
-    padding: 90px 28px 40px;
-    gap: 22px;
-    box-shadow: -8px 0 30px rgba(60,42,33,.12);
-    transform: translateX(100%);
-    transition: transform .3s ease;
-    z-index: 105;
+    justify-content: flex-start;
+    padding: 100px 32px 40px;
+    gap: 26px;
+    box-shadow: -12px 0 40px rgba(60, 42, 33, 0.18);
+    transform: translateX(105%) !important;
+    transition: transform 0.35s ease;
+    z-index: 9999 !important;
+    overflow-y: auto;
+    display: flex !important;
+    -webkit-overflow-scrolling: touch;
   }
 
-  .main-nav.is-open{
-    transform: translateX(0);
+  .main-nav.is-open {
+    transform: translateX(0) !important;
   }
 
-  .main-nav a{
-    font-size: .85rem;
-    letter-spacing: .08em;
+  .main-nav a {
+    font-size: 1.05rem !important;
+    letter-spacing: 0.08em;
+    color: var(--text) !important;
+    padding: 6px 0;
   }
 
+  .main-nav a::after {
+    display: none !important;
+  }
+
+  body.menu-open {
+    overflow: hidden !important;
+  }
+  
   /* ================= PORTFOLIO MOBILE ================= */
 
   .portfolio-grid{
@@ -766,6 +807,99 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     grid-template-columns: 1fr;
     gap: 16px;
   }
+
+ /* Contact page : passage en colonne unique */
+  .contacts-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-bottom: 40px;
+  }
+
+  .contact-page {
+    min-height: auto;
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
+
+  .contacts-lead {
+    max-width: 100%;
+    margin-bottom: 22px;
+  }
+
+  /* Liste des infos de contact */
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .contacts-line {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .contact-icon {
+    font-size: 1rem;
+    opacity: 0.7;
+  }
+
+  /* Formulaire plus confortable au tactile */
+  .contact-form {
+    gap: 16px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-group label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+  }
+
+  .contact-form textarea {
+    min-height: 140px;
+  }
+
+  .btn-block {
+    padding: 15px 20px;
+    font-size: 0.78rem;
+    margin-top: 6px;
+  }
+
+  /* Feedback message */
+  .form-feedback {
+    margin-top: 14px;
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  /* Social icons un peu plus grands */
+  .contacts-inner .social-icons {
+    margin-top: 22px;
+    gap: 10px;
+  }
+
+  .contacts-inner .icon-square {
+    width: 36px;
+    height: 36px;
+  }
+
 }
 
 
@@ -855,4 +989,66 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     margin: 4px 0 20px;
     justify-self: start;
   }
+
+.contacts-inner {
+    gap: 32px;
+  }
+
+  .section-title {
+    margin-bottom: 22px;
+  }
+
+  .contacts-lead {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 13px 14px;
+  }
+
+  .btn-block {
+    padding: 14px 18px;
+  }
+
+}
+/* ================= LOADING ================= */
+.page-loader{
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .35s ease, visibility .35s ease;
+}
+.page-loader.is-hidden{
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.loader-spinner{
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--line);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+}
+@keyframes spin{
+  to{ transform: rotate(360deg); }
+}
+
+/* ================= ANTI-SPAM HONEYPOT ================= */
+.hp-field{
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
 }

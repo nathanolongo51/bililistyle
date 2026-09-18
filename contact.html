@@ -1,65 +1,128 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact - Mohengo Gaëtan</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Yellowtail&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Mohengo Gaëtan | Photographe professionnel</title>
+  <meta name="description" content="Contactez Mohengo Gaëtan pour réserver votre séance photo. Portraits, mariages, famille et événements à Kyiv et ailleurs.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Yellowtail&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="index.html" class="logo">Mohengo Gaëtan</a>
-
-    <nav class="main-nav" id="mainNav">
-      <a href="index.html#about">À propos</a>
-      <a href="index.html#portfolio">Portfolio</a>
-      <a href="index.html#pricing">Tarifs</a>
-      <a href="index.html#testimonials">Témoignages</a>
-      <a href="contact.html" class="active">Contact</a>
-    </nav>
-
-    <button class="burger" id="burger" aria-label="Ouvrir le menu">
-      <span></span><span></span><span></span>
-    </button>
+  <!-- Loading overlay -->
+  <div id="page-loader" class="page-loader" aria-hidden="true">
+    <div class="loader-spinner"></div>
   </div>
-</header>
 
-<!-- ===== CONTACT PAGE ===== -->
-<section class="contacts contact-page" id="contacts">
-  <div class="container contacts-inner">
-    <div>
-      <h2 class="section-title">Contact</h2>
-      <p class="contacts-lead">Prêt à capturer votre histoire ? Contactez-moi et planifions ensemble votre séance photo.</p>
-      <p class="contacts-line">hello@mohengogaetan.com</p>
-      <p class="contacts-line">+380 12 345 6789</p>
-      <p class="contacts-line">Kyiv, Ukraine</p>
-      <div class="social-icons">
-        <a href="#" aria-label="Instagram" class="icon-square">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.6" fill="currentColor" stroke="none"/></svg>
-        </a>
-        <a href="#" aria-label="Facebook" class="icon-square">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8.5H16l.4-3.3h-2.9V8.1c0-.96.27-1.6 1.66-1.6h1.77V3.5C16.6 3.4 15.6 3.3 14.5 3.3c-2.6 0-4.4 1.6-4.4 4.5v2.4H7.6v3.3h2.5V22h3.4z"/></svg>
-        </a>
-      </div>
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Mohengo Gaëtan — Accueil">Mohengo Gaëtan</a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="index.html#about">À propos</a>
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="index.html#pricing">Tarifs</a>
+        <a href="index.html#testimonials">Témoignages</a>
+        <a href="contact.html" class="active" aria-current="page">Contact</a>
+      </nav>
+
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </header>
 
-    <form class="contact-form" id="contactForm">
-      <input type="text" placeholder="Votre nom" required>
-      <input type="email" placeholder="Votre e-mail" required>
-      <textarea rows="5" placeholder="Parlez-moi de votre projet photo..." required></textarea>
-      <button type="submit" class="btn btn-primary btn-block">Envoyer le message</button>
-    </form>
-  </div>
+  <!-- ===== CONTACT PAGE ===== -->
+  <main>
+    <section class="contacts contact-page" id="contacts" aria-labelledby="contact-title">
+      <div class="container contacts-inner">
 
-  <p class="footer-bottom">© 2026 Mohengo Gaëtan. Tous droits réservés.</p>
-</section>
+        <!-- Infos de contact -->
+        <div class="contact-info">
+          <h1 id="contact-title" class="section-title">Contact</h1>
+          <p class="contacts-lead">
+            Prêt à capturer votre histoire ? Contactez-moi et planifions ensemble votre séance photo.
+          </p>
 
-<script src="js/script.js"></script>
+          <ul class="contact-details" role="list">
+            <li>
+              <a href="mailto:hello@mohengogaetan.com" class="contacts-line">
+                <span class="contact-icon" aria-hidden="true">Mail :</span>
+                hello@mohengegaetan.com
+              </a>
+            </li>
+            <li>
+              <a href="tel:+243840811313" class="contacts-line">
+                <span class="contact-icon" aria-hidden="true">Téléphone :</span>
+                +243 840 811 313
+              </a>
+            </li>
+            <li class="contacts-line">
+              <span class="contact-icon" aria-hidden="true">Localisation :</span>
+              Kinshasa, RDC
+            </li>
+          </ul>
+
+          <div class="social-icons" aria-label="Réseaux sociaux">
+            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Mohengo Gaëtan" class="icon-square">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.3" cy="6.7" r="0.6" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+            <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Mohengo Gaëtan" class="icon-square">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M13.5 22v-8.5H16l.4-3.3h-2.9V8.1c0-.96.27-1.6 1.66-1.6h1.77V3.5C16.6 3.4 15.6 3.3 14.5 3.3c-2.6 0-4.4 1.6-4.4 4.5v2.4H7.6v3.3h2.5V22h3.4z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Formulaire -->
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Votre nom complet</label>
+            <input type="text" id="name" name="name" placeholder="Ex. : NTUBA UMBA Jean" required autocomplete="name" minlength="2">
+          </div>
+
+          <div class="form-group">
+            <label for="telephone">Téléphone <span class="req">*</span></label>
+                  <input type="tel" id="telephone" name="telephone" required placeholder="+243 …">
+            </div>
+
+          <!-- Honeypot anti-spam : laisser vide -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="website">Site web</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Votre message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Votre message" required minlength="10"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+            Envoyer le message
+          </button>
+
+          <!-- Zone de feedback (à gérer en JS) -->
+          <div id="form-feedback" class="form-feedback" role="status" aria-live="polite" hidden></div>
+        </form>
+
+      </div>
+
+      <p class="footer-bottom">© 2026 Mohengo Gaëtan. Tous droits réservés.</p>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
 </body>
 </html>

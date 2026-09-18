@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page introuvable - Mohengo Gaëtan</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yellowtail&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .error-page {
+    min-height: calc(100vh - 74px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .error-page .script {
+    font-size: clamp(4rem, 12vw, 8rem);
+    line-height: 1;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .error-page h1 {
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    margin-bottom: 16px;
+  }
+  .error-page p {
+    color: var(--text-dim);
+    font-size: clamp(.8rem, 1.3vw, .95rem);
+    max-width: 36ch;
+    margin-bottom: 28px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Loading overlay -->
+<div id="page-loader" class="page-loader" aria-hidden="true">
+  <div class="loader-spinner"></div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">Mohengo Gaëtan</a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html#about">À propos</a>
+      <a href="index.html#portfolio">Portfolio</a>
+      <a href="index.html#pricing">Tarifs</a>
+      <a href="index.html#testimonials">Témoignages</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="error-page">
+  <p class="script">404</p>
+  <h1>Page introuvable</h1>
+  <p>Désolé, la page que vous recherchez n'existe pas ou a été déplacée.</p>
+  <a href="index.html" class="btn btn-primary">Retour à l'accueil</a>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-bottom">© 2026 Mohengo Gaëtan. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
