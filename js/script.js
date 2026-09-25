@@ -167,7 +167,7 @@ ${message}`;
   let index = 0;
   let lbIndex = 0;
   let autoTimer = null;
-  const AUTO_MS = 4000;
+  const AUTO_MS = 3000;
 
   function slidesPerView() {
     if (window.innerWidth <= 560) return 1;
