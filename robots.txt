@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bililistyle.com/sitemap.xml
+Sitemap: https://bililistyle.vercel.app/sitemap.xml
 
 Disallow: /js/
 Disallow: /css/
