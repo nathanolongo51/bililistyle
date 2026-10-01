@@ -149,6 +149,11 @@ ul{ list-style:none; }
   object-fit: contain;
 }
 
+/* Contact info in mobile menu only */
+.nav-contact-mobile{
+  display: none;
+}
+
 .main-nav{
   display:flex;
   gap: clamp(12px, 2.2vw, 30px);
@@ -727,6 +732,33 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   body.menu-open {
     overflow: hidden !important;
   }
+
+  .nav-contact-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;   /* ← c’est ça qui l’aligne en bas */
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  width: 100%;
+  flex-shrink: 0;
+}
+  .nav-contact-mobile .nav-phone{
+    font-size: 0.95rem !important;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--text) !important;
+    text-transform: none !important;
+    padding: 0 !important;
+  }
+  .nav-contact-mobile .nav-phone:hover{
+    color: var(--accent) !important;
+  }
+  .nav-contact-mobile .nav-location{
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    letter-spacing: 0.04em;
+  }
   
   /* ================= PORTFOLIO MOBILE ================= */
 
@@ -1284,6 +1316,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   flex-direction: column;
   gap: clamp(12px, 2vw, 16px);
 }
+.hero-text .btn {
+    padding: 8px 16px;      /* Réduit la hauteur (8px) et la largeur (16px) */
+    font-size: 0.6rem;      /* Réduit légèrement la taille du texte */
+    letter-spacing: 0.05em; /* Optionnel : resserre un peu l'espace entre les lettres */
+  }
 
 /* Cards */
 .une-card{
